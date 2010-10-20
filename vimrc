@@ -179,8 +179,9 @@ let g:CommandTMatchWindowAtTop=1
 
 """""""" NERDTree: 
 " much of this is from http://github.com/spicycode/Vimlander-2-The-Quickening
-map <leader>dc :NERDTreeClose<cr>
-map <leader>do :NERDTree<cr>
+"map <leader>dc :NERDTreeClose<cr>
+"map <leader>do :NERDTree<cr>
+map <Leader>d :NERDTreeToggle<CR> :set number<CR>
 " Enable nice colors
 let NERDChristmasTree = 1
 " Make it easy to see where we are
