@@ -208,3 +208,5 @@ endif
 
 
 
+"I rarely use folds 
+set nofoldenable
