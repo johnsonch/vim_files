@@ -1,6 +1,6 @@
 Step 1: Clone this repo to .vim and symlink .vim/vimrc to ~/.vimrc 
 cd ~
-git clone git://github.com/mrmargolis/vim_files.git .vim
+git clone git://github.com/johnsonch/vim_files.git .vim
 ln -s ~/.vim/vimrc ~/.vimrc
 
 Step 2: To get all the plugins setup
