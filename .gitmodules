@@ -61,9 +61,6 @@
 [submodule "bundle/vim-json"]
 	path = bundle/vim-json
 	url = http://github.com/leshill/vim-json.git
-[submodule "bundle/vim-rooter"]
-	path = bundle/vim-rooter
-	url = http://github.com/airblade/vim-rooter.git
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = http://github.com/vim-ruby/vim-ruby.git
@@ -79,3 +76,12 @@
 [submodule "bundle/vim-ruby-refactoring"]
 	path = bundle/vim-ruby-refactoring
 	url = http://github.com/ecomba/vim-ruby-refactoring.git
+[submodule "bundle/vim-rooter"]
+	path = bundle/vim-rooter
+	url = git://github.com/airblade/vim-rooter.git 
+[submodule "bundle/vim-indentobject"]
+	path = bundle/vim-indentobject
+	url = https://github.com/austintaylor/vim-indentobject.git
+[submodule "bundle/TailMinusF"]
+	path = bundle/TailMinusF
+	url = https://github.com/matsuu/TailMinusF.git
