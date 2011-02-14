@@ -179,8 +179,6 @@ let g:CommandTMatchWindowAtTop=1
 
 """""""" NERDTree: 
 " much of this is from http://github.com/spicycode/Vimlander-2-The-Quickening
-"map <leader>dc :NERDTreeClose<cr>
-"map <leader>do :NERDTree<cr>
 map <Leader>d :NERDTreeToggle<CR> :set number<CR>
 " Enable nice colors
 let NERDChristmasTree = 1
@@ -205,8 +203,6 @@ let g:syntastic_auto_loc_list=0
 if filereadable($HOME."/.vimrc_work")
   source $HOME/.vimrc_work
 endif
-
-
 
 "I rarely use folds 
 set nofoldenable
