@@ -29,7 +29,7 @@ colorscheme vividchalk
 
 if has("gui_running")
   set guioptions=egmrt "hide macvim gui
-  set guifont=Menlo:h18
+  set guifont=Menlo:h24
 endif
 
 
