@@ -13,6 +13,7 @@ cd ~/.vim
 git submodule init
 git submodule update
 rm -rf ~/.vim/bundle/snipmate.vim/snippets        
+Make sure you use your system ruby for the next steps
 cd ~/.vim/bundle/command-t/ruby/command-t
 ruby extconf.rb
 make
