@@ -93,4 +93,4 @@
 	url = git://github.com/claco/jasmine.vim.git
 [submodule "bundle/vim-pml"]
 	path = bundle/vim-pml
-	url = https://github.com/nelstrom/vim-pml.git
+	url = git://github.com/johnsonch/vim-pml.git
