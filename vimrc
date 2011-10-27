@@ -29,7 +29,7 @@ colorscheme vividchalk
 
 if has("gui_running")
   set guioptions=egmrt "hide macvim gui
-  set guifont=Menlo:h24
+  set guifont=Menlo:h18
 endif
 
 
@@ -83,7 +83,7 @@ set winminheight=1  " 1 height windows
 "Status bar
 set laststatus=2 "always show status
 set showmode    "show current mode down the bottom
-set statusline=%<%f\ %h%m%r%{rvm#statusline()}%=%-14.(%l,%c%V%)\ %P
+"set statusline=%<%f\ %h%m%r%{rvm#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 
 "Linenumbers
@@ -205,6 +205,18 @@ let g:ConqueTerm_TERM = 'xterm-color'
 let g:CommandTMaxHeight=35
 let g:CommandTMatchWindowAtTop=1
 
+nmap <leader>t :CommandT<cr>
+
+"shortcut to open new tab and commandT
+nmap <leader>n :call NewTabAndCommandT()<cr>
+function! NewTabAndCommandT()
+  :tabnew
+  :CommandT
+endfunction
+
+"nerdcommenter
+nmap \\ <Plug>NERDCommenterInvert
+xmap \\ <Plug>NERDCommenterInvert
 
 """""""" NERDTree: 
 " much of this is from http://github.com/spicycode/Vimlander-2-The-Quickening
