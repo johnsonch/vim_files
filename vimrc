@@ -214,7 +214,16 @@ function! NewTabAndCommandT()
   :CommandT
 endfunction
 
-"nerdcommenter
+
+"rerdcommenteplit into a new tab
+function! SplitToTab()
+  :tab split
+  :normal! gT
+  :q
+  :normal! gt
+endfunction
+command! -nargs=0 SplitToTab call SplitToTab()
+
 nmap \\ <Plug>NERDCommenterInvert
 xmap \\ <Plug>NERDCommenterInvert
 
@@ -237,12 +246,6 @@ let NERDTreeIgnore=['\.$', '\~$']
 "Syntastic.  Awesome syntax error checking for js, ruby, etc...
 let g:syntastic_enable_signs=1 "show markers next to each error/warning
 let g:syntastic_auto_loc_list=0 "don't pop up the Errors list automatically
-
-
-"load some work stuff
-if filereadable($HOME."/.vimrc_work")
-  source $HOME/.vimrc_work
-endif
 
 "I rarely use folds 
 set nofoldenable
