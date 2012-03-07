@@ -242,6 +242,7 @@ let NERDTreeShowHidden = 1
 "let NERDTreeHijackNetrw = 0
 let NERDTreeHijackNetrw = 1
 let NERDTreeIgnore=['\.$', '\~$']
+map <Leader>f :NERDTree<CR><C-w>p:NERDTreeFind<CR>
 
 "Syntastic.  Awesome syntax error checking for js, ruby, etc...
 let g:syntastic_enable_signs=1 "show markers next to each error/warning
