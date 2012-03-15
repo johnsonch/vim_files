@@ -94,3 +94,9 @@
 [submodule "bundle/vim-pml"]
 	path = bundle/vim-pml
 	url = http://github.com/johnsonch/vim-pml.git
+[submodule "bundle/vimux"]
+	path = bundle/vimux
+	url = http://github.com/benmills/vimux.git 
+[submodule "bundle/ctrlp"]
+  path = bundle/ctrlp
+  url = http://github.com/kien/ctrlp.vim.git
