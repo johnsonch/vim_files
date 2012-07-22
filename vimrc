@@ -39,6 +39,8 @@ set smarttab
 set shiftwidth=2
 set autoindent
 set expandtab
+set textwidth=80
+set colorcolumn=+1
 
 
 "Set what Vim thinks of as keywords.  Used when searching and moving
@@ -79,6 +81,19 @@ set splitright  " Open new vertical split windows to the right
 set switchbuf=useopen,usetab,split  " Don't change current buffer on quickfix
 set winminheight=1  " 1 height windows
 
+" expand/shrink pane horizontally
+nmap = :resize +1<CR>
+nmap - :resize -1<CR>
+" expand/shrink pane vertically
+nmap ] :vertical resize +1<CR>
+nmap [ :vertical resize -1<CR>
+
+" pane focusing
+nmap <S-Left> <C-w><Left>
+nmap <S-Right> <C-w><Right>
+nmap <S-Up> <C-w><Up>
+nmap <S-Down> <C-w><Down>
+
 
 "Status bar
 set laststatus=2 "always show status
@@ -110,6 +125,7 @@ noremap ;; ;
 "Make Y consistent with other cap letters (D, C)
 nnoremap Y y$
 
+xnoremap p pgvy
 
 " keep the visual selection active after indenting.
 vmap > >gv
@@ -205,13 +221,13 @@ let g:ConqueTerm_TERM = 'xterm-color'
 let g:CommandTMaxHeight=35
 let g:CommandTMatchWindowAtTop=1
 
-nmap <leader>t :CommandT<cr>
+nmap <leader>t :CtrlP<cr>
 
 "shortcut to open new tab and commandT
 nmap <leader>n :call NewTabAndCommandT()<cr>
 function! NewTabAndCommandT()
   :tabnew
-  :CommandT
+  :CtrlP
 endfunction
 
 
@@ -230,6 +246,7 @@ xmap \\ <Plug>NERDCommenterInvert
 """""""" NERDTree: 
 " much of this is from http://github.com/spicycode/Vimlander-2-The-Quickening
 map <Leader>d :NERDTreeToggle<CR> :set number<CR>
+nmap <C-t> :NERDTreeToggle<CR>
 " Enable nice colors
 let NERDChristmasTree = 1
 " Make it easy to see where we are

@@ -100,3 +100,12 @@
 [submodule "bundle/ctrlp"]
   path = bundle/ctrlp
   url = http://github.com/kien/ctrlp.vim.git
+[submodule ".vim/bundle/puppe"]
+	path = .vim/bundle/puppe
+	url = git://github.com/rodjek/vim-puppet.git
+[submodule ".vim/bundle/puppet"]
+	path = .vim/bundle/puppet
+	url = git://github.com/rodjek/vim-puppet.git
+[submodule "bundle/puppet"]
+	path = bundle/puppet
+	url = git://github.com/rodjek/vim-puppet.git
