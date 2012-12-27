@@ -21,8 +21,6 @@ let g:mapleader = ","
 
   
 "colors
-"set background=light
-"colorscheme default
 set background=dark
 colorscheme vividchalk
 
