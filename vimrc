@@ -3,8 +3,6 @@ call pathogen#runtime_append_all_bundles()
 " On some Linux systems, this is necessary to make sure pathogen picks up ftdetect directories in plugins! :(
 filetype off 
 
-
-
 " Clear old autocmds in group so we don't get warnings
 autocmd!
 
@@ -92,6 +90,9 @@ nmap <S-Right> <C-w><Right>
 nmap <S-Up> <C-w><Up>
 nmap <S-Down> <C-w><Down>
 
+" Exit insert mode and save with jj
+imap jj <Esc>:w<CR>
+
 
 "Status bar
 set laststatus=2 "always show status
@@ -101,7 +102,7 @@ set showmode    "show current mode down the bottom
 
 "Linenumbers
 set number
-highlight LineNr term=bold cterm=NONE ctermfg=DarkRed ctermbg=NONE gui=NONE guifg=DarkRed guibg=NONE
+"highlight LineNr term=bold cterm=NONE ctermfg=DarkRed ctermbg=NONE gui=NONE guifg=DarkRed guibg=NONE
 
 
 " A nice, minimalistic tabline in CLI Vim
@@ -222,8 +223,8 @@ let g:CommandTMatchWindowAtTop=1
 nmap <leader>t :CtrlP<cr>
 
 "shortcut to open new tab and commandT
-nmap <leader>n :call NewTabAndCommandT()<cr>
-function! NewTabAndCommandT()
+nmap <leader>n :call NewTabAndCtrlP()<cr>
+function! NewTabAndCtrlP()
   :tabnew
   :CtrlP
 endfunction
