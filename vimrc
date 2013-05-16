@@ -284,3 +284,4 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
+set clipboard=unnamed
