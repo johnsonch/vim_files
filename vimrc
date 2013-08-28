@@ -8,7 +8,6 @@ autocmd!
 
 
 "General behavior
-set t_Co=256
 set nocompatible
 behave xterm
 
@@ -19,15 +18,6 @@ let mapleader = ","
 let g:mapleader = ","
 
   
-"colors
-set background=dark
-colorscheme vividchalk 
-
-
-if has("gui_running")
-  set guioptions=egmrt "hide macvim gui
-  set guifont=Menlo:h18
-endif
 
 
 " Sane spacing and tabs
@@ -36,9 +26,12 @@ set smarttab
 set shiftwidth=2
 set autoindent
 set expandtab
-set textwidth=80
-set colorcolumn=+1
+"set textwidth=80
+"set colorcolumn=+1
 
+" map j to gj and k to gk, so line navigation ignores line wrap
+nmap j gj
+nmap k gk
 
 "Set what Vim thinks of as keywords.  Used when searching and moving
 set isk+=_,$,@,%,#,- 
@@ -103,7 +96,7 @@ set showmode    "show current mode down the bottom
 
 "Linenumbers
 set number
-"highlight LineNr term=bold cterm=NONE ctermfg=DarkRed ctermbg=NONE gui=NONE guifg=DarkRed guibg=NONE
+highlight LineNr term=bold cterm=NONE ctermfg=DarkRed ctermbg=NONE gui=NONE guifg=DarkRed guibg=NONE
 
 
 " A nice, minimalistic tabline in CLI Vim
@@ -215,7 +208,7 @@ map <leader>sh :ConqueTerm bash --login<CR>
 let g:ConqueTerm_ReadUnfocused = 1
 let g:ConqueTerm_CWInsert = 0 " C-w works in insert mode
 let g:ConqueTerm_InsertOnEnter = 1 " default to insert mode when opening a new conque
-let g:ConqueTerm_TERM = 'xterm-color'
+let g:ConqueTerm_TERM = 'xterm-256color'
 
 "Command-T configuration
 let g:CommandTMaxHeight=35
@@ -223,7 +216,7 @@ let g:CommandTMatchWindowAtTop=1
 
 nmap <leader>t :CtrlP<cr>
 
-"shortcut to open new tab and commandT
+"shortcut to open new tab and control p
 nmap <leader>n :call NewTabAndCtrlP()<cr>
 function! NewTabAndCtrlP()
   :tabnew
@@ -265,8 +258,6 @@ map <Leader>f :NERDTree<CR><C-w>p:NERDTreeFind<CR>
 let g:syntastic_enable_signs=1 "show markers next to each error/warning
 let g:syntastic_auto_loc_list=0 "don't pop up the Errors list automatically
 
-"I rarely use folds 
-set nofoldenable
 "Vim Wiki
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'path_html': '~/Dropbox/vimwiki_html/', 'auto_export': 1, 'html_header': '~/Dropbox/vimwiki_html/header.tpl'}]
 map <Leader>wh  :VimwikiAll2HTML<cr>
@@ -285,3 +276,14 @@ map <leader>sa zg
 map <leader>s? z=
 
 set clipboard=unnamed
+
+"colors
+set t_Co=256
+set background=dark
+colorscheme codeschool 
+
+
+if has("gui_running")
+  set guioptions=egmrt "hide macvim gui
+  set guifont=Menlo:h18
+endif
