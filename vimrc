@@ -6,7 +6,6 @@ filetype off
 " Clear old autocmds in group so we don't get warnings
 autocmd!
 
-
 "General behavior
 set nocompatible
 behave xterm
@@ -17,17 +16,12 @@ set mouse=a
 let mapleader = ","
 let g:mapleader = ","
 
-  
-
-
 " Sane spacing and tabs
 set tabstop=2
 set smarttab
 set shiftwidth=2
 set autoindent
 set expandtab
-"set textwidth=80
-"set colorcolumn=+1
 
 " map j to gj and k to gk, so line navigation ignores line wrap
 nmap j gj
@@ -96,7 +90,7 @@ set showmode    "show current mode down the bottom
 
 "Linenumbers
 set number
-highlight LineNr term=bold cterm=NONE ctermfg=DarkRed ctermbg=NONE gui=NONE guifg=DarkRed guibg=NONE
+"highlight LineNr term=bold cterm=NONE ctermfg=DarkRed ctermbg=NONE gui=NONE guifg=DarkRed guibg=NONE
 
 
 " A nice, minimalistic tabline in CLI Vim
@@ -215,6 +209,8 @@ let g:CommandTMaxHeight=35
 let g:CommandTMatchWindowAtTop=1
 
 nmap <leader>t :CtrlP<cr>
+nmap <leader>T :tabnew<cr>
+nmap <leader>w :VimwikiIndex<cr>
 
 "shortcut to open new tab and control p
 nmap <leader>n :call NewTabAndCtrlP()<cr>
@@ -275,7 +271,6 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
-set clipboard=unnamed
 
 "colors
 set t_Co=256
@@ -287,3 +282,5 @@ if has("gui_running")
   set guioptions=egmrt "hide macvim gui
   set guifont=Menlo:h18
 endif
+let g:ycm_allow_changing_updatetime = 0 
+set clipboard=unnamed
