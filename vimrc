@@ -94,9 +94,9 @@ set number
 
 
 " A nice, minimalistic tabline in CLI Vim
-hi TabLine cterm=bold,underline ctermfg=8 ctermbg=0
-hi TabLineSel cterm=bold ctermfg=0 ctermbg=7
-hi TabLineFill cterm=bold ctermbg=0
+"hi TabLine cterm=bold,underline ctermfg=8 ctermbg=0
+"hi TabLineSel cterm=bold ctermfg=0 ctermbg=7
+"hi TabLineFill cterm=bold ctermbg=0
 
 
 "Shortcuts for common tasks
@@ -210,7 +210,6 @@ let g:CommandTMatchWindowAtTop=1
 
 nmap <leader>t :CtrlP<cr>
 nmap <leader>T :tabnew<cr>
-nmap <leader>w :VimwikiIndex<cr>
 
 "shortcut to open new tab and control p
 nmap <leader>n :call NewTabAndCtrlP()<cr>
@@ -258,6 +257,11 @@ let g:syntastic_auto_loc_list=0 "don't pop up the Errors list automatically
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'path_html': '~/Dropbox/vimwiki_html/', 'auto_export': 1, 'html_header': '~/Dropbox/vimwiki_html/header.tpl'}]
 map <Leader>wh  :VimwikiAll2HTML<cr>
 map <Leader>wo  :!open ~/Dropbox/vimwiki_html/index.html<cr>
+nmap <leader>w :call NewWikiPage()<cr>
+function! NewWikiPage()
+  :tabnew
+  :VimwikiIndex
+endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
@@ -274,8 +278,9 @@ map <leader>s? z=
 
 "colors
 set t_Co=256
-set background=dark
-colorscheme codeschool 
+"set background=light
+"colorscheme codeschool 
+colorscheme vividchalk
 
 
 if has("gui_running")
