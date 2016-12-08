@@ -1,6 +1,3 @@
-[submodule "bundle/vim-rails"]
-	path = bundle/vim-rails
-	url = http://github.com/tpope/vim-rails.git
 [submodule "bundle/vim-ragtag"]
 	path = bundle/vim-ragtag
 	url = http://github.com/tpope/vim-ragtag.git

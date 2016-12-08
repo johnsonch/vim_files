@@ -2,7 +2,7 @@ call pathogen#helptags()
 
 call pathogen#runtime_append_all_bundles()
 " On some Linux systems, this is necessary to make sure pathogen picks up ftdetect directories in plugins! :(
-filetype off 
+filetype off
 
 " Clear old autocmds in group so we don't get warnings
 autocmd!
@@ -29,7 +29,7 @@ nmap j gj
 nmap k gk
 
 "Set what Vim thinks of as keywords.  Used when searching and moving
-set isk+=_,$,@,%,#,- 
+set isk+=_,$,@,%,#,-
 
 
 "no error signals
@@ -39,7 +39,7 @@ set visualbell t_vb=
 
 "General settings that make Vim awesome
 filetype plugin indent on
-syntax on 
+syntax on
 set  dictionary="/usr/dict/words"
 set wildmode=list:longest,full " Better completion
 set wildmenu
@@ -51,8 +51,8 @@ set hidden  "better handling of background buffers
 set backspace=indent,eol,start  " Make backspace delete lots of things
 set showcmd " show partial commands in bottom line
 
-"I rarely use folds 
-set nofoldenable 
+"I rarely use folds
+set nofoldenable
 
 
 "set vim to use a central backup dir
@@ -103,7 +103,7 @@ set number
 "Shortcuts for common tasks
 command! Q q " Bind :Q to :q.
 
-"Make semicolon work as colon so you don't have to push shift 
+"Make semicolon work as colon so you don't have to push shift
 "for common actions
 map ; :
 "Two semicolons == semicolon
@@ -163,14 +163,14 @@ cmap w!! %!sudo tee > /dev/null %
 
 
 " select xml text to format and hit ,x
-vmap <leader>x :!tidy -q -i -xml<CR> 
+vmap <leader>x :!tidy -q -i -xml<CR>
 
 
 " run selection in bash
 vmap <leader>rs :!bash <CR>
 
 " mapping to search with Ack
-nnoremap <leader>a :Ack 
+nnoremap <leader>a :Ack
 
 " Shortcut for switching to 'special' buffers that start with -
 " This is an experiment in my workflow to see if having renamed (:f new_name)
@@ -232,7 +232,7 @@ command! -nargs=0 SplitToTab call SplitToTab()
 nmap \\ <Plug>NERDCommenterInvert
 xmap \\ <Plug>NERDCommenterInvert
 
-"""""""" NERDTree: 
+"""""""" NERDTree:
 " much of this is from http://github.com/spicycode/Vimlander-2-The-Quickening
 map <Leader>d :NERDTreeToggle<CR> :set number<CR>
 nmap <C-t> :NERDTreeToggle<CR>
@@ -258,7 +258,7 @@ let g:syntastic_auto_loc_list=0 "don't pop up the Errors list automatically
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'path_html': '~/Dropbox/vimwiki_html/', 'auto_export': 1, 'html_header': '~/Dropbox/vimwiki_html/header.tpl'}]
 map <Leader>wh  :VimwikiAll2HTML<cr>
 map <Leader>wo  :!open ~/Dropbox/vimwiki_html/index.html<cr>
-nmap <leader>w :call NewWikiPage()<cr>
+nmap <leader>nw :call NewWikiPage()<cr>
 function! NewWikiPage()
   :tabnew
   :VimwikiIndex
@@ -280,17 +280,22 @@ map <leader>s? z=
 "colors
 set t_Co=256
 set background=dark
-"colorscheme codeschool 
-"colorscheme vividchalk
-colorscheme distinguished
+"colorscheme codeschool
+colorscheme vividchalk
+"colorscheme distinguished
 
 
 if has("gui_running")
   set guioptions=egmrt "hide macvim gui
   set guifont=Menlo:h18
 endif
-let g:ycm_allow_changing_updatetime = 0 
+
+let g:ycm_allow_changing_updatetime = 0
 set clipboard=unnamed
 set colorcolumn=80
 let g:gist_open_browser_after_post = 1
 let g:gist_post_private = 1
+
+"By default, JSX syntax highlighting and indenting will be enabled only for
+"files with the .jsx extension. If you would like JSX in .js files, add
+let g:jsx_ext_required = 0
