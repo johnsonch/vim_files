@@ -1,3 +1,82 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+"" The following are examples of different formats supported.
+"" Keep Plugin commands between vundle#begin/end.
+"" plugin on GitHub repo
+"Plugin 'tpope/vim-fugitive'
+"" plugin from http://vim-scripts.org/vim/scripts.html
+"Plugin 'L9'
+"" Git plugin not hosted on GitHub
+"Plugin 'git://git.wincent.com/command-t.git'
+"" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+"" The sparkup vim script is in a subdirectory of this repo called vim.
+"" Pass the path to set the runtimepath properly.
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+"" Install L9 and avoid a Naming conflict if you've already installed a
+"" different version somewhere else.
+"Plugin 'ascenator/L9', {'name': 'newL9'}
+
+
+
+	Plugin 'tpope/vim-ragtag.git'
+	Plugin 'tpope/vim-markdown.git'
+	Plugin 'tpope/vim-git.git'
+	Plugin 'tpope/vim-cucumber.git'
+	Plugin 'tpope/vim-vividchalk.git'
+	Plugin 'tpope/vim-fugitive.git'
+	Plugin 'tpope/vim-haml.git'
+	Plugin 'tpope/vim-endwise.git'
+	Plugin 'tpope/vim-surround.git'
+	Plugin 'tpope/vim-unimpaired.git'
+	Plugin 'tpope/vim-abolish.git'
+	Plugin 'tpope/vim-repeat.git'
+	Plugin 'scrooloose/nerdtree.git'
+	Plugin 'scrooloose/syntastic.git'
+	Plugin 'scrooloose/nerdcommenter.git'
+	Plugin 'mattn/gist-vim.git'
+	Plugin 'csexton/rvm.vim.git'
+	Plugin 'msanders/snipmate.vim.git'
+	Plugin 'pangloss/vim-javascript.git'
+	Plugin 'leshill/vim-json.git'
+	Plugin 'vim-ruby/vim-ruby.git'
+	Plugin 'tsaleh/vim-supertab.git'
+	Plugin 'scrooloose/snipmate-snippets.git'
+	Plugin 'ecomba/vim-ruby-refactoring.git'
+"	Plugin 'airblade/vim-rooter.git '
+	Plugin 'austintaylor/vim-indentobject.git'
+	Plugin 'matsuu/TailMinusF.git'
+	Plugin 'mortice/pbcopy.vim.git'
+	Plugin 'claco/jasmine.vim.git'
+	Plugin 'johnsonch/vim-pml.git'
+	Plugin 'benmills/vimux.git'
+  Plugin 'kien/ctrlp.vim.git'
+	Plugin 'rodjek/vim-puppet.git'
+	Plugin 'kikijump/tslime.vim.git'
+	Plugin 'trongrg/vim-slim.git'
+	Plugin 'kchmck/vim-coffee-script.git'
+	Plugin 'airblade/vim-gitgutter.git'
+	Plugin 'burnettk/vim-angular.git'
+	Plugin 'flazz/vim-colorschemes.git'
+	Plugin 'elixir-lang/vim-elixir.git'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
+
 call pathogen#helptags()
 
 call pathogen#runtime_append_all_bundles()
