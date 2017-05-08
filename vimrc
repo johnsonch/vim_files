@@ -10,65 +10,50 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-"" The following are examples of different formats supported.
-"" Keep Plugin commands between vundle#begin/end.
-"" plugin on GitHub repo
-"Plugin 'tpope/vim-fugitive'
-"" plugin from http://vim-scripts.org/vim/scripts.html
-"Plugin 'L9'
-"" Git plugin not hosted on GitHub
-"Plugin 'git://git.wincent.com/command-t.git'
-"" git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
-"" The sparkup vim script is in a subdirectory of this repo called vim.
-"" Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-"" Install L9 and avoid a Naming conflict if you've already installed a
-"" different version somewhere else.
-"Plugin 'ascenator/L9', {'name': 'newL9'}
-
-
-
-	Plugin 'tpope/vim-ragtag.git'
-	Plugin 'tpope/vim-markdown.git'
-	Plugin 'tpope/vim-git.git'
-	Plugin 'tpope/vim-cucumber.git'
-	Plugin 'tpope/vim-vividchalk.git'
-	Plugin 'tpope/vim-fugitive.git'
-	Plugin 'tpope/vim-haml.git'
-	Plugin 'tpope/vim-endwise.git'
-	Plugin 'tpope/vim-surround.git'
-	Plugin 'tpope/vim-unimpaired.git'
-	Plugin 'tpope/vim-abolish.git'
-	Plugin 'tpope/vim-repeat.git'
-	Plugin 'scrooloose/nerdtree.git'
-	Plugin 'scrooloose/syntastic.git'
-	Plugin 'scrooloose/nerdcommenter.git'
-	Plugin 'mattn/gist-vim.git'
-	Plugin 'csexton/rvm.vim.git'
-	Plugin 'msanders/snipmate.vim.git'
-	Plugin 'pangloss/vim-javascript.git'
-	Plugin 'leshill/vim-json.git'
-	Plugin 'vim-ruby/vim-ruby.git'
-	Plugin 'tsaleh/vim-supertab.git'
-	Plugin 'scrooloose/snipmate-snippets.git'
-	Plugin 'ecomba/vim-ruby-refactoring.git'
-"	Plugin 'airblade/vim-rooter.git '
-	Plugin 'austintaylor/vim-indentobject.git'
-	Plugin 'matsuu/TailMinusF.git'
-	Plugin 'mortice/pbcopy.vim.git'
-	Plugin 'claco/jasmine.vim.git'
-	Plugin 'johnsonch/vim-pml.git'
-	Plugin 'benmills/vimux.git'
-  Plugin 'kien/ctrlp.vim.git'
-	Plugin 'rodjek/vim-puppet.git'
-	Plugin 'kikijump/tslime.vim.git'
-	Plugin 'trongrg/vim-slim.git'
-	Plugin 'kchmck/vim-coffee-script.git'
-	Plugin 'airblade/vim-gitgutter.git'
-	Plugin 'burnettk/vim-angular.git'
-	Plugin 'flazz/vim-colorschemes.git'
-	Plugin 'elixir-lang/vim-elixir.git'
+Plugin 'tpope/vim-ragtag.git'
+Plugin 'tpope/vim-markdown.git'
+Plugin 'tpope/vim-git.git'
+Plugin 'tpope/vim-cucumber.git'
+Plugin 'tpope/vim-vividchalk.git'
+Plugin 'tpope/vim-fugitive.git'
+Plugin 'tpope/vim-haml.git'
+Plugin 'tpope/vim-endwise.git'
+Plugin 'tpope/vim-surround.git'
+Plugin 'tpope/vim-unimpaired.git'
+Plugin 'tpope/vim-abolish.git'
+Plugin 'tpope/vim-repeat.git'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'scrooloose/syntastic.git'
+Plugin 'scrooloose/nerdcommenter.git'
+Plugin 'mattn/gist-vim.git'
+Plugin 'csexton/rvm.vim.git'
+Plugin 'msanders/snipmate.vim.git'
+Plugin 'pangloss/vim-javascript.git'
+Plugin 'leshill/vim-json.git'
+Plugin 'vim-ruby/vim-ruby.git'
+Plugin 'tsaleh/vim-supertab.git'
+Plugin 'scrooloose/snipmate-snippets.git'
+Plugin 'ecomba/vim-ruby-refactoring.git'
+Plugin 'airblade/vim-rooter.git'
+Plugin 'austintaylor/vim-indentobject.git'
+Plugin 'matsuu/TailMinusF.git'
+Plugin 'mortice/pbcopy.vim.git'
+Plugin 'claco/jasmine.vim.git'
+Plugin 'johnsonch/vim-pml.git'
+Plugin 'benmills/vimux.git'
+Plugin 'kien/ctrlp.vim.git'
+Plugin 'rodjek/vim-puppet.git'
+Plugin 'jgdavey/tslime.vim.git'
+Plugin 'trongrg/vim-slim.git'
+Plugin 'kchmck/vim-coffee-script.git'
+Plugin 'airblade/vim-gitgutter.git'
+Plugin 'burnettk/vim-angular.git'
+Plugin 'flazz/vim-colorschemes.git'
+Plugin 'elixir-lang/vim-elixir.git'
+Plugin 'ngmy/vim-rubocop.git'
+Plugin 'mxw/vim-jsx'
+Plugin 'vimwiki/vimwiki.git'
+Plugin 'keith/swift.vim.git'
 
 
 " All of your Plugins must be added before the following line
@@ -76,6 +61,13 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 
+let g:vimrubocop_config = '~/.rubocop.yml'
+let g:vimrubocop_keymap = 0
+nmap <Leader>r :RuboCop<CR>
+
+" React
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+let g:syntastic_javascript_checkers = ['eslint']
 
 call pathogen#helptags()
 
@@ -85,12 +77,13 @@ filetype off
 
 " Clear old autocmds in group so we don't get warnings
 autocmd!
+autocmd BufWritePre * %s/\s\+$//e
 
 "General behavior
 set nocompatible
 behave xterm
 
-set mouse=a
+"set mouse=a
 
 "Set mapleader
 let mapleader = ","
@@ -371,10 +364,17 @@ endif
 
 let g:ycm_allow_changing_updatetime = 0
 set clipboard=unnamed
-set colorcolumn=80
+"set colorcolumn=80
 let g:gist_open_browser_after_post = 1
 let g:gist_post_private = 1
 
 "By default, JSX syntax highlighting and indenting will be enabled only for
 "files with the .jsx extension. If you would like JSX in .js files, add
 let g:jsx_ext_required = 0
+
+let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint']
+
+
+"Rubocop
+nnoremap    <leader>R       :RubocopThis<CR>
+nnoremap    <leader>T       :RubocopAll<CR>
