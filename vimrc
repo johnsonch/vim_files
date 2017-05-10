@@ -352,8 +352,8 @@ map <leader>s? z=
 "colors
 set t_Co=256
 "set background=dark
-"set background=light
-colorscheme lan
+set background=light
+colorscheme mac_classic
 "colorscheme codeschool
 "colorscheme vividchalk
 "colorscheme distinguished
