@@ -351,9 +351,11 @@ map <leader>s? z=
 
 "colors
 set t_Co=256
-set background=dark
+"set background=dark
+"set background=light
+colorscheme lan
 "colorscheme codeschool
-colorscheme vividchalk
+"colorscheme vividchalk
 "colorscheme distinguished
 
 
