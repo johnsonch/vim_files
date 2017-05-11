@@ -353,10 +353,9 @@ map <leader>s? z=
 set t_Co=256
 "set background=dark
 set background=light
-colorscheme mac_classic
-"colorscheme codeschool
+"colorscheme buttercream
+colorscheme colorful
 "colorscheme vividchalk
-"colorscheme distinguished
 
 
 if has("gui_running")
