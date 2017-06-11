@@ -354,7 +354,8 @@ set t_Co=256
 "set background=dark
 set background=light
 "colorscheme buttercream
-colorscheme mac_classic
+"colorscheme mac_classic
+colorscheme colorful
 "colorscheme vividchalk
 
 
