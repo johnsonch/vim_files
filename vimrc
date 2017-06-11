@@ -353,9 +353,9 @@ map <leader>s? z=
 set t_Co=256
 "set background=dark
 set background=light
-"colorscheme buttercream
+colorscheme buttercream
 "colorscheme mac_classic
-colorscheme colorful
+"colorscheme colorful
 "colorscheme vividchalk
 
 
