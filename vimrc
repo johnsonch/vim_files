@@ -7,6 +7,8 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
+let g:vundle_default_git_proto = 'git'
+
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
@@ -31,7 +33,7 @@ Plugin 'msanders/snipmate.vim.git'
 Plugin 'pangloss/vim-javascript.git'
 Plugin 'leshill/vim-json.git'
 Plugin 'vim-ruby/vim-ruby.git'
-Plugin 'tsaleh/vim-supertab.git'
+Plugin 'ervandew/supertab.git'
 Plugin 'scrooloose/snipmate-snippets.git'
 Plugin 'ecomba/vim-ruby-refactoring.git'
 Plugin 'airblade/vim-rooter.git'
@@ -54,6 +56,7 @@ Plugin 'ngmy/vim-rubocop.git'
 Plugin 'mxw/vim-jsx'
 Plugin 'vimwiki/vimwiki.git'
 Plugin 'keith/swift.vim.git'
+Plugin 'elmcast/elm-vim'
 
 
 " All of your Plugins must be added before the following line
@@ -351,12 +354,11 @@ map <leader>s? z=
 
 "colors
 set t_Co=256
-"set background=dark
-set background=light
-colorscheme buttercream
+set background=dark
+"set background=light
+"colorscheme buttercream
 "colorscheme mac_classic
-"colorscheme colorful
-"colorscheme vividchalk
+colorscheme vividchalk
 
 
 if has("gui_running")
@@ -366,6 +368,7 @@ endif
 
 let g:ycm_allow_changing_updatetime = 0
 set clipboard=unnamed
+set pastetoggle=<leader>p
 "set colorcolumn=80
 let g:gist_open_browser_after_post = 1
 let g:gist_post_private = 1
