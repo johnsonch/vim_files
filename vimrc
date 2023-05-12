@@ -28,10 +28,9 @@ Plugin 'scrooloose/nerdcommenter.git'
 Plugin 'mattn/gist-vim.git'
 Plugin 'csexton/rvm.vim.git'
 Plugin 'msanders/snipmate.vim.git'
-Plugin 'pangloss/vim-javascript.git'
 Plugin 'leshill/vim-json.git'
 Plugin 'vim-ruby/vim-ruby.git'
-Plugin 'tsaleh/vim-supertab.git'
+Plugin 'ervandew/supertab.git'
 Plugin 'scrooloose/snipmate-snippets.git'
 Plugin 'ecomba/vim-ruby-refactoring.git'
 Plugin 'airblade/vim-rooter.git'
@@ -43,7 +42,6 @@ Plugin 'johnsonch/vim-pml.git'
 Plugin 'benmills/vimux.git'
 Plugin 'kien/ctrlp.vim.git'
 Plugin 'rodjek/vim-puppet.git'
-Plugin 'jgdavey/tslime.vim.git'
 Plugin 'trongrg/vim-slim.git'
 Plugin 'kchmck/vim-coffee-script.git'
 Plugin 'airblade/vim-gitgutter.git'
@@ -54,11 +52,31 @@ Plugin 'ngmy/vim-rubocop.git'
 Plugin 'mxw/vim-jsx'
 Plugin 'vimwiki/vimwiki.git'
 Plugin 'keith/swift.vim.git'
+Plugin 'elmcast/elm-vim'
+Plugin 'pangloss/vim-javascript'    " JavaScript support
+Plugin 'leafgarland/typescript-vim' " TypeScript syntax
+Plugin 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
+Plugin 'jparise/vim-graphql'        " GraphQL syntax
+Plugin 'neoclide/coc.nvim'
 
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+""""" Typescript code completion
+" CoC extensions
+let g:coc_global_extensions = ['coc-tsserver']
+" Remap keys for applying codeAction to the current line.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+""""" End Typescript code completion
 
 
 let g:vimrubocop_config = '~/.rubocop.yml'
@@ -308,6 +326,10 @@ xmap \\ <Plug>NERDCommenterInvert
 " much of this is from http://github.com/spicycode/Vimlander-2-The-Quickening
 map <Leader>d :NERDTreeToggle<CR> :set number<CR>
 nmap <C-t> :NERDTreeToggle<CR>
+" remove line numbers
+let NERDTreeShowLineNumbers = 1
+" set the side of nerd tree
+let g:NERDTreeWinPos = "left"
 " Enable nice colors
 let NERDChristmasTree = 1
 " Make it easy to see where we are
@@ -327,7 +349,7 @@ let g:syntastic_enable_signs=1 "show markers next to each error/warning
 let g:syntastic_auto_loc_list=0 "don't pop up the Errors list automatically
 
 "Vim Wiki
-let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'path_html': '~/Dropbox/vimwiki_html/', 'auto_export': 1, 'html_header': '~/Dropbox/vimwiki_html/header.tpl'}]
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'path_html': '~/vimwiki_html/', 'auto_export': 1, 'html_header': '~/vimwiki_html/header.tpl'}]
 map <Leader>wh  :VimwikiAll2HTML<cr>
 map <Leader>wo  :!open ~/Dropbox/vimwiki_html/index.html<cr>
 nmap <leader>nw :call NewWikiPage()<cr>
@@ -351,11 +373,11 @@ map <leader>s? z=
 
 "colors
 set t_Co=256
-"set background=dark
-set background=light
+set background=dark
+"set background=light
 "colorscheme buttercream
-colorscheme mac_classic
-"colorscheme vividchalk
+"colorscheme mac_classic
+colorscheme vividchalk
 
 
 if has("gui_running")
@@ -365,6 +387,7 @@ endif
 
 let g:ycm_allow_changing_updatetime = 0
 set clipboard=unnamed
+set pastetoggle=<leader>p
 "set colorcolumn=80
 let g:gist_open_browser_after_post = 1
 let g:gist_post_private = 1
